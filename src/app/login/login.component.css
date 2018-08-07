@@ -1,0 +1,21 @@
+.card-register {
+    background-color: #949494;
+}
+
+.card-register .title {
+    color: #f5593d;
+}
+
+.card-register .title {
+    color: #ffffff;
+}
+
+.btn-danger.disabled,
+.btn-danger:disabled {
+    background-color: #f5593d;
+    border-color: #f5593d;
+}
+
+.mgt {
+    margin-top: 1rem
+}

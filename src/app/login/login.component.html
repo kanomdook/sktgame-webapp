@@ -1,0 +1,26 @@
+<div class="wrapper">
+  <div class="page-header" style="background-image: url('../assets/img/bg-2.jpg');">
+    <div class="filter"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-sm-6 mr-auto ml-auto">
+          <div class="card card-register">
+            <h3 class="title">เข้าสู่ระบบ</h3>
+            <form class="register-form">
+
+              <label>อีเมล</label>
+              <input type="email" name="email" class="form-control" [(ngModel)]="data.email" placeholder="อีเมล">
+
+              <label>รหัสผ่าน</label>
+              <input type="password" name="password" class="form-control" [(ngModel)]="data.password" placeholder="รหัสผ่าน">
+              <p class="mgt">
+                <a href="#">ลืมรหัสผ่าน ?</a>
+              </p>
+              <button class="btn btn-info btn-block btn-round" [disabled]="!(data.email && data.password)" (click)="login()">เข้าสู่ระบบ</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

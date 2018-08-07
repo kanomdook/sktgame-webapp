@@ -4,16 +4,18 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ReportComponent } from './report/report.component';
 import { PeopleComponent } from './people/people.component';
+import { AuthGuardService } from './providers/auth-guard/auth-guard.service';
 
 export const AppRoutes: Routes = [
     {
         path: '',
-        redirectTo: 'dashboard',
+        redirectTo: 'login',
         pathMatch: 'full',
     },
     {
         path: 'dashboard',
-        component: DashboardComponent
+        component: DashboardComponent,
+        canActivate: [AuthGuardService]
     },
     {
         path: 'login',
@@ -25,10 +27,12 @@ export const AppRoutes: Routes = [
     },
     {
         path: 'report',
-        component: ReportComponent
+        component: ReportComponent,
+        canActivate: [AuthGuardService]
     },
     {
         path: 'people',
-        component: PeopleComponent
+        component: PeopleComponent,
+        canActivate: [AuthGuardService]
     }
 ];

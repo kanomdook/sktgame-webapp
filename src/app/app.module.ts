@@ -13,6 +13,8 @@ import { RegisterComponent } from './register/register.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ReportComponent } from './report/report.component';
 import { PeopleComponent } from './people/people.component';
+import { Api } from './providers/service/api';
+import { AuthGuardService } from './providers/auth-guard/auth-guard.service';
 
 
 enableProdMode();
@@ -34,7 +36,7 @@ enableProdMode();
     RouterModule.forRoot(AppRoutes),
     NgbModule.forRoot()
   ],
-  providers: [],
+  providers: [Api, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
