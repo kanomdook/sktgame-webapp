@@ -1,4 +1,5 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +10,7 @@ export class NavbarComponent implements OnInit {
   private toggleButton: any;
   private sidebarVisible: boolean;
 
-  constructor(private element: ElementRef) {
+  constructor(private element: ElementRef, private router: Router) {
     this.sidebarVisible = false;
   }
 
@@ -41,6 +42,11 @@ export class NavbarComponent implements OnInit {
     } else {
       this.sidebarClose();
     }
+  }
+
+  logout() {
+    window.localStorage.removeItem('user');
+    this.router.navigate(['/login']);
   }
 
 }

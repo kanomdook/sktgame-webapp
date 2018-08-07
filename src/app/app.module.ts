@@ -11,6 +11,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ReportComponent } from './report/report.component';
+import { PeopleComponent } from './people/people.component';
 
 
 enableProdMode();
@@ -21,7 +23,9 @@ enableProdMode();
     DashboardComponent,
     LoginComponent,
     RegisterComponent,
-    NavbarComponent
+    NavbarComponent,
+    ReportComponent,
+    PeopleComponent
   ],
   imports: [
     BrowserModule,
