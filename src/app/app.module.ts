@@ -5,7 +5,7 @@ import { AppRoutes } from './app.routing';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
+import { NgHttpLoaderModule } from 'ng-http-loader';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
@@ -32,6 +32,7 @@ enableProdMode();
   imports: [
     BrowserModule,
     HttpClientModule,
+    NgHttpLoaderModule,
     FormsModule,
     RouterModule.forRoot(AppRoutes),
     NgbModule.forRoot()

@@ -25,6 +25,7 @@
     "core-js": "^2.5.4",
     "jquery": "^3.3.1",
     "jw-bootstrap-switch-ng2": "^1.0.10",
+    "ng-http-loader": "^3.0.0",
     "ng2-nouislider": "^1.7.12",
     "nouislider": "^11.1.0",
     "popper.js": "^1.14.4",
