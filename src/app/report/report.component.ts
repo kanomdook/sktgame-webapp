@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./report.component.css']
 })
 export class ReportComponent implements OnInit {
-
+  page = 1;
+  page2 = 1;
   constructor() { }
 
   ngOnInit() {

@@ -1,7 +1,7 @@
 <div class="section">
   <div class="container">
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-12">
         <h4 class="title">
           <small>รายการประเภทกีฬาที่เข้าร่วมแข่งขัน</small>
         </h4>
@@ -44,13 +44,17 @@
           </table>
         </div>
       </div>
-      <div class="col-md-4"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <ngb-pagination [collectionSize]="100" [(page)]="page" [maxSize]="3" [rotate]="true"></ngb-pagination>
+      </div>
     </div>
 
     <div class="row">
       <div class="col-md-12">
         <h4 class="title">
-          <small>รายการที่ท่านเข้าร่วมแข่งขัน</small>
+          <small>ผลการแข่งขันกีฬา</small>
         </h4>
 
         <div class="row mgt-bottom">
@@ -111,6 +115,12 @@
             </tbody>
           </table>
         </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <ngb-pagination [collectionSize]="100" [(page)]="page2" [maxSize]="3" [rotate]="true"></ngb-pagination>
       </div>
     </div>
   </div>
