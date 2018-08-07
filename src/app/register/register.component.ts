@@ -53,7 +53,6 @@ export class RegisterComponent implements OnInit {
         }
       });
       this.provinces = provinces;
-      console.log(res);
     } catch (error) {
       console.log(error);
     }

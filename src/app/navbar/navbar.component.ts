@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
@@ -10,8 +11,30 @@ export class NavbarComponent implements OnInit {
   private toggleButton: any;
   private sidebarVisible: boolean;
 
-  constructor(private element: ElementRef, private router: Router) {
+  constructor(private element: ElementRef, public location: Location, private router: Router) {
     this.sidebarVisible = false;
+    router.events.subscribe((val) => {
+      const title: any = this.location.prepareExternalUrl(this.location.path());
+      if (title !== '/login' && title !== '/register') {
+        const auth = document.getElementById('auth');
+        auth.setAttribute('style', 'display:none;');
+
+        const authss = document.getElementById('authsuccess');
+        authss.setAttribute('style', 'display:inherit;');
+
+        const ee = document.getElementById('my-nav');
+        ee.classList.remove('navbar-transparent');
+      } else {
+        const auth = document.getElementById('auth');
+        auth.setAttribute('style', 'display:inherit;');
+
+        const authss = document.getElementById('authsuccess');
+        authss.setAttribute('style', 'display:none;');
+
+        const ee = document.getElementById('my-nav');
+        ee.classList.add('navbar-transparent');
+      }
+    });
   }
 
   ngOnInit() {
