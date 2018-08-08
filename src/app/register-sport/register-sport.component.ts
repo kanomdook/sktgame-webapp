@@ -27,6 +27,7 @@ export class RegisterSportComponent implements OnInit {
   opt: Array<any> = [];
   oldPassword: any = '';
   profileImgModel: any;
+  citizenImgModel: any;
   profileImgBase64: any = '';
   citizenImgBase64: any = '';
 
