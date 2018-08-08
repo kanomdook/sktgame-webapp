@@ -1,0 +1,133 @@
+<div class="section">
+    <div class="container">
+        <div class="row top-1">
+            <div class="col-md-12">
+                <h4 class="title">
+                    <small>สมัครเข้าแข่งขันกีฬา</small>
+                </h4>
+
+                <div class="row mgt-bottom">
+                    <div class="col-md-8"></div>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="ค้นหา" aria-describedby="basic-addon1">
+                            <span class="input-group-addon serach-ic" id="basic-addon1">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-responsive-md top">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th class="text-center">ลำดับ</th>
+                                <th width="300">ประเภทการแข่งขัน</th>
+                                <th class="text-center" colspan="2">12 ปี</th>
+                                <th class="text-center" colspan="2">14 ปี</th>
+                                <th class="text-center" colspan="2">16 ปี</th>
+                                <th class="text-center" colspan="2">18 ปี</th>
+                                <th class="text-center" width="400">หมายเหตุ</th>
+                            </tr>
+                            <tr>
+                                <th class="text-center"></th>
+                                <th width="300"></th>
+                                <th class="text-right">ชาย</th>
+                                <th class="text-center">หญิง</th>
+                                <th class="text-right">ชาย</th>
+                                <th class="text-center">หญิง</th>
+                                <th class="text-right">ชาย</th>
+                                <th class="text-center">หญิง</th>
+                                <th class="text-right">ชาย</th>
+                                <th class="text-center">หญิง</th>
+                                <th width="400"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center">1</td>
+                                <td width="300">วิ่ง 60 เมตร</td>
+                                <td class="text-left">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox">
+                                            <span class="form-check-sign"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td class="text-right">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox">
+                                            <span class="form-check-sign"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td class="text-left">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox">
+                                            <span class="form-check-sign"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td class="text-right">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox">
+                                            <span class="form-check-sign"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td class="text-left">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox">
+                                            <span class="form-check-sign"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td class="text-right">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox">
+                                            <span class="form-check-sign"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td class="text-left">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox">
+                                            <span class="form-check-sign"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td class="text-right">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox">
+                                            <span class="form-check-sign"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Default">
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="row top-1">
+            <div class="col-md-12 text-center">
+                <ngb-pagination [collectionSize]="100" [(page)]="page" [maxSize]="3" [rotate]="true"></ngb-pagination>
+            </div>
+        </div>
+    </div>
+</div>

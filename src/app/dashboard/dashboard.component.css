@@ -1,0 +1,20 @@
+.serach-ic {
+    padding: 10px;
+    border: 1px solid #dddddd;
+}
+
+.mgt-bottom {
+    margin-bottom: 1rem;
+}
+
+.top-1 {
+    margin-top: 2rem;
+}
+
+.table thead tr:last-child {
+    border-bottom: none !important;
+}
+
+.form-check {
+    margin-top: -0.6rem !important;
+}
