@@ -54,9 +54,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="text-center">1</td>
-                                <td width="300">วิ่ง 60 เมตร</td>
+                            <tr *ngFor="let sport of sportList;let i = index">
+                                <td class="text-center">{{i+1}}</td>
+                                <td width="300">{{sport.name}}</td>
                                 <td class="text-left">
                                     <div class="form-check">
                                         <label class="form-check-label">
@@ -130,6 +130,12 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
+        </div>
+
+        <div class="row top-1">
+            <div class="col-md-12 text-center">
+                <button type="button" class="btn btn-info btn-round"><i class="fa fa-id-card-o"></i> สมัครเข้าแข่งขัน</button>
             </div>
         </div>
     </div>
