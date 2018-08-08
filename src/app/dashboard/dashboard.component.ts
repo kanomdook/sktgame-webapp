@@ -14,6 +14,7 @@ export class DashboardComponent implements OnInit {
   keyword = '';
   sportList: Array<any> = [];
   sports: Array<any> = [];
+  selectSports: Array<any> = [];
   constructor(public api: Api, public router: Router) { }
 
   ngOnInit() {
@@ -44,7 +45,18 @@ export class DashboardComponent implements OnInit {
   }
 
   selectSport(e, sport, age, gender) {
+    if (e) {
+      this.selectSports.push(sport);
+    } else {
+      for (let i = 0; i < this.selectSports.length; i++) {
+        if (this.selectSports[i]._id === sport._id) {
+          this.selectSports.splice(i, 1);
+          break;
+        }
+      }
+    }
     console.log(e, sport, age, gender);
+    console.log(this.selectSports);
   }
 
   gotoRegsterSport() {
