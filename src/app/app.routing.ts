@@ -5,6 +5,7 @@ import { RegisterComponent } from './register/register.component';
 import { ReportComponent } from './report/report.component';
 import { PeopleComponent } from './people/people.component';
 import { AuthGuardService } from './providers/auth-guard/auth-guard.service';
+import { RegisterSportComponent } from './register-sport/register-sport.component';
 
 export const AppRoutes: Routes = [
     {
@@ -33,6 +34,11 @@ export const AppRoutes: Routes = [
     {
         path: 'people',
         component: PeopleComponent,
+        canActivate: [AuthGuardService]
+    },
+    {
+        path: 'registersport',
+        component: RegisterSportComponent,
         canActivate: [AuthGuardService]
     }
 ];

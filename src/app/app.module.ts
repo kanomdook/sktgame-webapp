@@ -15,6 +15,7 @@ import { ReportComponent } from './report/report.component';
 import { PeopleComponent } from './people/people.component';
 import { Api } from './providers/service/api';
 import { AuthGuardService } from './providers/auth-guard/auth-guard.service';
+import { RegisterSportComponent } from './register-sport/register-sport.component';
 
 
 enableProdMode();
@@ -27,7 +28,8 @@ enableProdMode();
     RegisterComponent,
     NavbarComponent,
     ReportComponent,
-    PeopleComponent
+    PeopleComponent,
+    RegisterSportComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Api } from '../providers/service/api';
+// import { Router, NavigationExtras } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,7 +14,7 @@ export class DashboardComponent implements OnInit {
   keyword = '';
   sportList: Array<any> = [];
   sports: Array<any> = [];
-  constructor(public api: Api) { }
+  constructor(public api: Api, public router: Router) { }
 
   ngOnInit() {
     this.getSports();
@@ -44,6 +46,17 @@ export class DashboardComponent implements OnInit {
 
   selectSport(e, sport, age, gender) {
     console.log(e, sport, age, gender);
+  }
+
+  gotoRegsterSport() {
+    // const navigationExtras: NavigationExtras = {
+    //   queryParams: {
+    //     'data': JSON.stringify(this.sports)
+    //   }
+    // };
+    // this.router.navigate(['registersport'], navigationExtras);
+    window.localStorage.setItem('data', JSON.stringify(this.sports));
+    this.router.navigate(['registersport']);
   }
 
   changeSportType(e) {

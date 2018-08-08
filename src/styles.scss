@@ -1,9 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "assets/css/demo.css";
 @import "assets/css/nucleo-icons.css";
 @import "assets/sass/paper-kit.scss";
-
 .page-item.active .page-link {
     background-color: #c3c3c3 !important;
 }
@@ -11,4 +11,27 @@
 .pagination>.page-item>.page-link {
     border: 2px solid #737373 !important;
     color: #848484 !important;
+}
+
+// .ngb-dp-navigation-chevron {
+//     transform: none !important;
+//     -ms-transform: none !important;
+// }
+.ngb-dp-navigation-chevron {
+    border-style: solid;
+    border-width: 0.2em 0.2em 0 0;
+    display: inline-block;
+    width: 0.75em;
+    height: 0.75em;
+    margin-left: 0.25em;
+    margin-right: 0.15em;
+    transform: rotate(0deg) !important;
+    -ms-transform: rotate(0deg);
+}
+
+.right .ngb-dp-navigation-chevron {
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg) !important;
+    margin-left: 0.15em;
+    margin-right: 0.25em;
 }
