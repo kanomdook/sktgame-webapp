@@ -27,23 +27,23 @@ export class DashboardComponent implements OnInit {
         ele.properties.forEach(ele2 => {
           ele2.allowed_men = {
             val: ele2.allowed_men,
-            uuid: ''
+            uuid: false
           };
           ele2.allowed_woman = {
             val: ele2.allowed_woman,
-            uuid: ''
+            uuid: false
           };
         });
       });
-
+      this.sports = this.sportList;
       console.log(this.sportList);
     } catch (error) {
       console.log(error);
     }
   }
 
-  selectSport(e) {
-    console.log(e);
+  selectSport(e, sport, age, gender) {
+    console.log(e, sport, age, gender);
   }
 
   changeSportType(e) {
