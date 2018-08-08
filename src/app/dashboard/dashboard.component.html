@@ -9,7 +9,7 @@
                 <div class="row mgt-bottom">
                     <div class="col-md-3">
                         <div class="form-group">
-                            <select class="form-control" name="sportType" [(ngModel)]="sportType">
+                            <select class="form-control" name="sportType" [(ngModel)]="sportType" (ngModelChange)="changeSportType($event)">
                                 <option value="">เลือกประเภทกีฬา</option>
                                 <option value="กีฬา">กีฬา</option>
                                 <option value="กรีฑา">กรีฑา</option>
@@ -19,7 +19,7 @@
                     <div class="col-md-5"></div>
                     <div class="col-md-4">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="ค้นหา" aria-describedby="basic-addon1">
+                            <input type="text" class="form-control" placeholder="ค้นหา" aria-describedby="basic-addon1" [(ngModel)]="keyword" (ngModelChange)="search($event)">
                             <span class="input-group-addon serach-ic" id="basic-addon1">
                                 <i class="fa fa-search" aria-hidden="true"></i>
                             </span>
@@ -54,7 +54,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let sport of sportList;let i = index">
+                            <tr *ngFor="let sport of sports;let i = index">
                                 <td class="text-center">{{i+1}}</td>
                                 <td width="300">{{sport.name}}</td>
                                 <td class="text-left">
@@ -128,7 +128,7 @@
 
 
                                 <td class="text-center">
-                                    <span class="text-danger">{{sport.note}}</span>
+                                    <span class="text-danger">{{sport.note ? sport.note : '-'}}</span>
                                 </td>
                             </tr>
                         </tbody>
