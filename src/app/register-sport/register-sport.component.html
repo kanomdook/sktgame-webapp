@@ -1,10 +1,12 @@
 <div class="section profile-content">
   <div class="container">
-    <div class="owner">
-      <div class="avatar">
-        <img src="../assets/img/user.png" alt="Circle Image" class="img-circle img-no-padding img-responsive" (click)="uploadImg()">
+    <div class="row r-top">
+      <div class="col-md-4"></div>
+      <div class="col-md-4 text-center">
+        <img src="../assets/img/user.png" alt="Circle Image" class="p-img" (click)="uploadImg()">
         <input type="file" #profileImg accept="image/*" [(ngModel)]="profileImgModel" (change)="onProfileImgChange($event)" style="visibility: hidden;">
       </div>
+      <div class="col-md-4"></div>
     </div>
     <br>
     <div class="nav-tabs-navigation">
@@ -20,16 +22,6 @@
                     </label>
                     <input type="text" name="name" class="form-control" [(ngModel)]="data.name" placeholder="ชื่อ - นามสกุล">
                     <br>
-                    <label>อีเมล
-                      <span class="txt-red"> *</span>
-                    </label>
-                    <input type="email" name="email" class="form-control" [(ngModel)]="data.email" placeholder="อีเมล" [disabled]="true">
-                    <br>
-                    <label>รหัสผ่าน
-                      <span class="txt-red"> *</span>
-                    </label>
-                    <input type="password" name="password" class="form-control" [(ngModel)]="data.password" placeholder="รหัสผ่าน">
-                    <br>
                     <div class="form-group">
                       <label>จังหวัด
                         <span class="txt-red"> *</span>
@@ -37,15 +29,6 @@
                       <select class="form-control" name="province" [(ngModel)]="data.province" (ngModelChange)="filterProvince($event)">
                         <option value="">เลือกจังหวัด</option>
                         <option value="{{province}}" *ngFor="let province of provinces">{{province}}</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label>อปท.
-                        <span class="txt-red"> *</span>
-                      </label>
-                      <select class="form-control" name="district" [(ngModel)]="data.district" [disabled]="!data.province">
-                        <option value="">เลือก อปท.</option>
-                        <option value="{{item}}" *ngFor="let item of opt">{{item}}</option>
                       </select>
                     </div>
                     <div class="form-group">
@@ -88,8 +71,8 @@
                     </label>
                     <input type="text" name="height" class="form-control" [(ngModel)]="data.height" placeholder="ส่วนสูง">
                     <div class="btn-top">
-                      <button type="button" class="btn btn-danger btn-round" (click)="save()" [disabled]="!(data.name && data.email && data.password && data.province && data.district && data.gender && data.birthday && data.age && data.weight && data.height)">
-                        <i class="fa fa-check"></i> บันทึกข้อมูล</button>
+                      <button type="button" class="btn btn-danger btn-round" (click)="save()" [disabled]="!(data.name && data.province && data.gender && data.birthday && (data.age == 12 || data.age == 14 || data.age == 16 || data.age == 18) && data.weight && data.height)">
+                        <i class="fa fa-check"></i> สมัครเข้าแข่งขัน</button>
                     </div>
                   </form>
                 </div>

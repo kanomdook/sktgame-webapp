@@ -38,7 +38,6 @@ export class DashboardComponent implements OnInit {
         });
       });
       this.sports = this.sportList;
-      console.log(this.sportList);
     } catch (error) {
       console.log(error);
     }
@@ -55,7 +54,7 @@ export class DashboardComponent implements OnInit {
     //   }
     // };
     // this.router.navigate(['registersport'], navigationExtras);
-    window.localStorage.setItem('data', JSON.stringify(this.sports));
+    window.localStorage.setItem('data', JSON.stringify(this.sportList));
     this.router.navigate(['registersport']);
   }
 
