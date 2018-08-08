@@ -8,9 +8,10 @@ import { Api } from '../providers/service/api';
   styleUrls: ['./register-sport.component.css']
 })
 export class RegisterSportComponent implements OnInit {
-  selectSportList: Array<any> = [];
   // private route: ActivatedRoute
   @ViewChild('profileImg') profileImg;
+  @ViewChild('citizenImg') citizenImg;
+  selectSportList: Array<any> = [];
   data: any = {
     name: '',
     email: '',
@@ -26,6 +27,8 @@ export class RegisterSportComponent implements OnInit {
   opt: Array<any> = [];
   oldPassword: any = '';
   profileImgModel: any;
+  profileImgBase64: any = '';
+  citizenImgBase64: any = '';
 
   constructor(public api: Api) {
     // this.route.queryParams.subscribe(params => {
@@ -44,6 +47,10 @@ export class RegisterSportComponent implements OnInit {
     this.profileImg.nativeElement.click();
   }
 
+  uploadCitizenImg() {
+    this.citizenImg.nativeElement.click();
+  }
+
   onProfileImgChange(e) {
     const fileBrowser = this.profileImg.nativeElement;
     const reader = new FileReader();
@@ -51,6 +58,19 @@ export class RegisterSportComponent implements OnInit {
     if (fileBrowser.files.length > 0) {
       reader.onload = () => {
         const base64 = reader.result.replace(/\n/g, '');
+        this.profileImgBase64 = base64;
+      };
+    }
+  }
+
+  onCitizenImgChange(e) {
+    const fileBrowser = this.citizenImg.nativeElement;
+    const reader = new FileReader();
+    reader.readAsDataURL(fileBrowser.files.length > 0 ? fileBrowser.files[0] : null);
+    if (fileBrowser.files.length > 0) {
+      reader.onload = () => {
+        const base64 = reader.result.replace(/\n/g, '');
+        this.citizenImgBase64 = base64;
       };
     }
   }

@@ -3,8 +3,9 @@
     <div class="row r-top">
       <div class="col-md-4"></div>
       <div class="col-md-4 text-center">
-        <img src="../assets/img/user.png" alt="Circle Image" class="p-img" (click)="uploadImg()">
+        <img [src]="profileImgBase64 ? profileImgBase64 :'../assets/img/user.png'" alt="Circle Image" class="p-img" (click)="uploadImg()">
         <input type="file" #profileImg accept="image/*" [(ngModel)]="profileImgModel" (change)="onProfileImgChange($event)" style="visibility: hidden;">
+        <input type="file" #citizenImg accept="image/*" [(ngModel)]="citizenImgModel" (change)="onCitizenImgChange($event)" style="visibility: hidden;">
       </div>
       <div class="col-md-4"></div>
     </div>
@@ -107,9 +108,9 @@
           </ngb-tab>
           <ngb-tab title="ภาพถ่ายบัตรประชาชน">
             <ng-template ngbTabContent>
-              <img src="../../assets/img/citizen.jpg" alt="img" class="citizen-img">
+              <img [src]="citizenImgBase64 ? citizenImgBase64 :'../assets/img/citizen.jpg'" alt="img" class="citizen-img">
               <div class="btn-top">
-                <button type="button" class="btn btn-danger btn-round">
+                <button type="button" class="btn btn-danger btn-round" (click)="uploadCitizenImg()">
                   <i class="fa fa-upload"></i> อัพโหลดรูปบัตรประชาชน</button>
               </div>
             </ng-template>
