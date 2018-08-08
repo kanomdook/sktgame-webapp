@@ -9,6 +9,7 @@ import { Api } from '../providers/service/api';
 export class DashboardComponent implements OnInit {
   page = 1;
   sportType = '';
+  keyword = '';
   sportList: Array<any> = [];
   sports: Array<any> = [];
   constructor(public api: Api) { }
