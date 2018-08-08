@@ -58,71 +58,77 @@
                                 <td class="text-center">{{i+1}}</td>
                                 <td width="300">{{sport.name}}</td>
                                 <td class="text-left">
-                                    <div class="form-check">
+                                    <div [className]="sport.properties[0].allowed && sport.properties[0].allowed_men ? 'form-check':'form-check disabled'">
                                         <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox">
+                                            <input class="form-check-input" type="checkbox" [disabled]="sport.properties[0].allowed && sport.properties[0].allowed_men ? false : true">
                                             <span class="form-check-sign"></span>
                                         </label>
                                     </div>
                                 </td>
                                 <td class="text-right">
-                                    <div class="form-check">
+                                    <div [className]="sport.properties[0].allowed && sport.properties[0].allowed_woman ? 'form-check':'form-check disabled'">
                                         <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox">
+                                            <input class="form-check-input" type="checkbox" [disabled]="sport.properties[0].allowed && sport.properties[0].allowed_woman ? false : true">
                                             <span class="form-check-sign"></span>
                                         </label>
                                     </div>
                                 </td>
+
                                 <td class="text-left">
-                                    <div class="form-check">
+                                    <div [className]="sport.properties[1].allowed && sport.properties[1].allowed_men ? 'form-check':'form-check disabled'">
                                         <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox">
+                                            <input class="form-check-input" type="checkbox" [disabled]="sport.properties[1].allowed && sport.properties[1].allowed_men ? false : true">
                                             <span class="form-check-sign"></span>
                                         </label>
                                     </div>
                                 </td>
                                 <td class="text-right">
-                                    <div class="form-check">
+                                    <div [className]="sport.properties[1].allowed && sport.properties[1].allowed_woman ? 'form-check':'form-check disabled'">
                                         <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox">
+                                            <input class="form-check-input" type="checkbox" [disabled]="sport.properties[1].allowed && sport.properties[1].allowed_woman ? false : true">
                                             <span class="form-check-sign"></span>
                                         </label>
                                     </div>
                                 </td>
+
                                 <td class="text-left">
-                                    <div class="form-check">
+                                    <div [className]="sport.properties[2].allowed && sport.properties[2].allowed_men ? 'form-check':'form-check disabled'">
                                         <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox">
+                                            <input class="form-check-input" type="checkbox" [disabled]="sport.properties[2].allowed && sport.properties[2].allowed_men ? false : true">
                                             <span class="form-check-sign"></span>
                                         </label>
                                     </div>
                                 </td>
                                 <td class="text-right">
-                                    <div class="form-check">
+                                    <div [className]="sport.properties[2].allowed && sport.properties[2].allowed_woman ? 'form-check':'form-check disabled'">
                                         <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox">
+                                            <input class="form-check-input" type="checkbox" [disabled]="sport.properties[2].allowed && sport.properties[2].allowed_woman ? false : true">
                                             <span class="form-check-sign"></span>
                                         </label>
                                     </div>
                                 </td>
+
                                 <td class="text-left">
-                                    <div class="form-check">
+                                    <div [className]="sport.properties[3].allowed && sport.properties[3].allowed_men ? 'form-check':'form-check disabled'">
                                         <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox">
+                                            <input class="form-check-input" type="checkbox" [disabled]="sport.properties[3].allowed && sport.properties[3].allowed_men ? false : true">
                                             <span class="form-check-sign"></span>
                                         </label>
                                     </div>
                                 </td>
                                 <td class="text-right">
-                                    <div class="form-check">
+                                    <div [className]="sport.properties[3].allowed && sport.properties[3].allowed_woman ? 'form-check':'form-check disabled'">
                                         <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox">
+                                            <input class="form-check-input" type="checkbox" [disabled]="sport.properties[3].allowed && sport.properties[3].allowed_woman ? false : true">
                                             <span class="form-check-sign"></span>
                                         </label>
                                     </div>
                                 </td>
+
+
+
                                 <td class="text-center">
-                                    {{sport.note}}
+                                    <span class="text-danger">{{sport.note}}</span>
                                 </td>
                             </tr>
                         </tbody>

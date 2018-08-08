@@ -18,3 +18,8 @@
 /* .form-check {
     margin-top: -0.6rem !important;
 } */
+
+.form-check .form-check-sign::before,
+.form-check .form-check-sign::after {
+    background-color: #a9a9a9;
+}
