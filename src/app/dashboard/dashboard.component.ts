@@ -23,10 +23,27 @@ export class DashboardComponent implements OnInit {
       const res: any = await this.api.get('/sports');
       this.sportList = res.data;
       this.sports = res.data;
+      this.sportList.forEach(ele => {
+        ele.properties.forEach(ele2 => {
+          ele2.allowed_men = {
+            val: ele2.allowed_men,
+            uuid: ''
+          };
+          ele2.allowed_woman = {
+            val: ele2.allowed_woman,
+            uuid: ''
+          };
+        });
+      });
+
       console.log(this.sportList);
     } catch (error) {
       console.log(error);
     }
+  }
+
+  selectSport(e) {
+    console.log(e);
   }
 
   changeSportType(e) {
@@ -43,8 +60,8 @@ export class DashboardComponent implements OnInit {
   search(e) {
     this.sportType = '';
     if (e) {
+      const reg = new RegExp(e, 'g');
       const sports = this.sportList.filter(el => {
-        const reg = new RegExp(e, 'g');
         if (el.sportType.match(reg) || el.name.match(reg)) {
           return el;
         }
