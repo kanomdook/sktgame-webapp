@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
   page = 1;
+  sportType = '';
   constructor() { }
 
   ngOnInit() {

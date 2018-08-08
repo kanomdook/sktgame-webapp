@@ -7,7 +7,16 @@
                 </h4>
 
                 <div class="row mgt-bottom">
-                    <div class="col-md-8"></div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <select class="form-control" name="sportType" [(ngModel)]="sportType">
+                                <option value="">เลือกประเภทกีฬา</option>
+                                <option value="กีฬา">กีฬา</option>
+                                <option value="กรีฑา">กรีฑา</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-5"></div>
                     <div class="col-md-4">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="ค้นหา" aria-describedby="basic-addon1">
@@ -114,19 +123,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Default">
+                                        <input type="text" class="form-control">
                                     </div>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-            </div>
-        </div>
-
-        <div class="row top-1">
-            <div class="col-md-12 text-center">
-                <ngb-pagination [collectionSize]="100" [(page)]="page" [maxSize]="3" [rotate]="true"></ngb-pagination>
             </div>
         </div>
     </div>
