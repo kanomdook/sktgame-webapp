@@ -108,8 +108,13 @@
                         <input type="text" name="height" class="form-control" [(ngModel)]="data.height" placeholder="ส่วนสูง">
                       </span>
 
-                      <div class="btn-top">
+                      <div class="btn-top" *ngIf="data.role == 'student'">
                         <button type="button" class="btn btn-danger btn-round" (click)="save()" [disabled]="!(data.name && data.province && data.district && data.gender !== 'unselect' && data.birthday && data.age && data.weight && data.height)">
+                          <i class="fa fa-check"></i> บันทึกข้อมูล</button>
+                      </div>
+
+                      <div class="btn-top" *ngIf="data.role !== 'student'">
+                        <button type="button" class="btn btn-danger btn-round" (click)="save()" [disabled]="!(data.name && data.province && data.district && data.gender !== 'unselect' && data.birthday && data.age && data.tel)">
                           <i class="fa fa-check"></i> บันทึกข้อมูล</button>
                       </div>
                     </span>

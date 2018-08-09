@@ -59,15 +59,13 @@ export class DashboardComponent implements OnInit {
     console.log(this.selectSports);
   }
 
-  gotoRegsterSport() {
+  gotoRegisterSport() {
     // const navigationExtras: NavigationExtras = {
     //   queryParams: {
     //     'data': JSON.stringify(this.sports)
     //   }
     // };
     // this.router.navigate(['registersport'], navigationExtras);
-    window.localStorage.setItem('data', JSON.stringify(this.sportList));
-    this.router.navigate(['registersport']);
   }
 
   changeSportType(e) {
