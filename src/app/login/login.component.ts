@@ -22,7 +22,11 @@ export class LoginComponent implements OnInit {
     try {
       const res: any = await this.api.post('/user/signin', this.data);
       window.localStorage.setItem('user', JSON.stringify(res.data));
-      this.router.navigate(['/dashboard']);
+      if (res.data.role !== 'unactive') {
+        this.router.navigate(['/dashboard']);
+      } else {
+        this.router.navigate(['/registersport']);
+      }
     } catch (error) {
       this.data = {
         email: '',

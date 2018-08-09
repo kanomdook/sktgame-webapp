@@ -22,23 +22,28 @@
                       <label>ประเภทข้อมูลบุคคล
                         <span class="txt-red"> *</span>
                       </label>
-                      <select class="form-control" name="gender" [(ngModel)]="data.peopleType">
-                        <option value="">ประเภทบุคคล</option>
-                        <option value="นักกีฬา กรีฑา">นักกีฬา กรีฑา</option>
-                        <option value="เจ้าหน้าที่">เจ้าหน้าที่</option>
-                        <option value="โค้ช">โค้ช</option>
-                        <option value="ผู้ฝีกสอน">ผู้ฝีกสอน</option>
-                        <option value="สื่อมวลชน">สื่อมวลชน</option>
+                      <select class="form-control" name="role" [(ngModel)]="data.role">
+                        <option value="unactive">ประเภทบุคคล</option>
+                        <option value="student">นักกีฬา กรีฑา</option>
+                        <option value="staff">เจ้าหน้าที่</option>
+                        <option value="coach">โค้ช</option>
+                        <option value="teacher">ผู้ฝีกสอน</option>
+                        <option value="news">สื่อมวลชน</option>
                       </select>
                     </div>
 
-                    <span *ngIf="data.peopleType">
+                    <span *ngIf="data.role !== 'unactive'">
                       <label>ชื่อ - นามสกุล
                         <span class="txt-red"> *</span>
                       </label>
                       <input type="text" name="name" class="form-control" [(ngModel)]="data.name" placeholder="ชื่อ - นามสกุล">
                       <br>
-                      <span *ngIf="data.peopleType !== 'นักกีฬา กรีฑา'">
+                      <label>รหัสผ่าน
+                        <span class="txt-red"> *</span>
+                      </label>
+                      <input type="password" name="password" class="form-control" [(ngModel)]="data.password" placeholder="รหัสผ่าน">
+                      <br>
+                      <span *ngIf="data.role !== 'student'">
                         <label>เบอร์โทรศัพท์
                           <span class="txt-red"> *</span>
                         </label>
@@ -55,11 +60,18 @@
                         </select>
                       </div>
                       <div class="form-group">
+                        <label>อปท.</label>
+                        <select class="form-control" name="district" [(ngModel)]="data.district" [disabled]="!data.province">
+                          <option value="">เลือก อปท.</option>
+                          <option value="{{item}}" *ngFor="let item of opt">{{item}}</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
                         <label>เพศ
                           <span class="txt-red"> *</span>
                         </label>
                         <select class="form-control" name="gender" [(ngModel)]="data.gender">
-                          <option value="">เลือกเพศ</option>
+                          <option value="unselect">เลือกเพศ</option>
                           <option value="ชาย">ชาย</option>
                           <option value="หญิง">หญิง</option>
                         </select>
@@ -84,7 +96,7 @@
                       </label>
                       <input type="text" name="age" class="form-control" placeholder="21" [(ngModel)]="data.age" [disabled]="true">
                       <br>
-                      <span *ngIf="data.peopleType == 'นักกีฬา กรีฑา'">
+                      <span *ngIf="data.role == 'student'">
                         <label class="mgt">น้ำหนัก (กิโลกรัม)
                           <span class="txt-red"> *</span>
                         </label>
@@ -97,8 +109,8 @@
                       </span>
 
                       <div class="btn-top">
-                        <button type="button" class="btn btn-danger btn-round" (click)="save()" [disabled]="!(data.name && data.province && data.gender && data.birthday && (data.age == 12 || data.age == 14 || data.age == 16 || data.age == 18) && data.weight && data.height)">
-                          <i class="fa fa-check"></i> สมัครเข้าแข่งขัน</button>
+                        <button type="button" class="btn btn-danger btn-round" (click)="save()" [disabled]="!(data.name && data.province && data.district && data.gender !== 'unselect' && data.birthday && data.age && data.weight && data.height)">
+                          <i class="fa fa-check"></i> บันทึกข้อมูล</button>
                       </div>
                     </span>
                   </form>

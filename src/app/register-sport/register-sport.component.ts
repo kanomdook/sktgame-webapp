@@ -11,17 +11,7 @@ export class RegisterSportComponent implements OnInit {
   // private route: ActivatedRoute
   @ViewChild('profileImg') profileImg;
   @ViewChild('citizenImg') citizenImg;
-  selectSportList: Array<any> = [];
-  data: any = {
-    name: '',
-    email: '',
-    password: '',
-    gender: '',
-    province: '',
-    district: '',
-    peopleType: '',
-    age: 0
-  };
+  data: any = {};
   schoolList: Array<any> = [];
   provinces: Array<any> = [];
   opt: Array<any> = [];
@@ -39,8 +29,7 @@ export class RegisterSportComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.selectSportList = JSON.parse(window.localStorage.getItem('data'));
-    console.log(this.selectSportList);
+    this.data = JSON.parse(window.localStorage.getItem('user'));
     this.getSchools();
   }
 
@@ -62,6 +51,23 @@ export class RegisterSportComponent implements OnInit {
         this.profileImgBase64 = base64;
       };
     }
+  }
+
+  initFilter(e) {
+    this.opt = [];
+    let opts: Array<any> = [];
+    opts = this.schoolList.filter(el => {
+      return e === el.province;
+    });
+
+    const optList: Array<any> = [];
+    opts.forEach(el => {
+      if (optList.indexOf(el.district) < 0) {
+        optList.push(el.district);
+      }
+    });
+
+    this.opt = optList;
   }
 
   onCitizenImgChange(e) {
@@ -88,9 +94,28 @@ export class RegisterSportComponent implements OnInit {
         }
       });
       this.provinces = provinces;
+      this.data = JSON.parse(window.localStorage.getItem('user'));
+      this.oldPassword = this.data.password;
+      this.initFilter(this.data.province);
     } catch (error) {
       console.log(error);
     }
+  }
+
+  filterProvince(e) {
+    this.opt = [];
+    this.data.district = '';
+    let opts: Array<any> = [];
+    opts = this.schoolList.filter(el => {
+      return e === el.province;
+    });
+    const optList: Array<any> = [];
+    opts.forEach(el => {
+      if (optList.indexOf(el.district) < 0) {
+        optList.push(el.district);
+      }
+    });
+    this.opt = optList;
   }
 
   calAge(e) {
@@ -115,18 +140,18 @@ export class RegisterSportComponent implements OnInit {
   }
 
   async save() {
-    // try {
-    //   if (this.oldPassword !== this.data.password) {
-    //     this.data.changedPassword = true;
-    //   } else {
-    //     this.data.changedPassword = false;
-    //   }
-    //   const res: any = await this.api.put('/user/' + this.data._id, this.data);
-    //   window.localStorage.setItem('user', JSON.stringify(res.data));
-    //   alert('แก้ไขข้อมูลส่วนตัวสำเร็จ');
-    // } catch (error) {
-    //   console.log(error);
-    // }
+    try {
+      if (this.oldPassword !== this.data.password) {
+        this.data.changedPassword = true;
+      } else {
+        this.data.changedPassword = false;
+      }
+      const res: any = await this.api.put('/user/' + this.data._id, this.data);
+      window.localStorage.setItem('user', JSON.stringify(res.data));
+      alert('แก้ไขข้อมูลส่วนตัวสำเร็จ');
+    } catch (error) {
+      console.log(error);
+    }
   }
 
 }

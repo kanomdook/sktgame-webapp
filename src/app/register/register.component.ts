@@ -62,10 +62,10 @@ export class RegisterComponent implements OnInit {
     try {
       await this.api.post('/user/signup', this.data);
       alert('สมัครสมาชิกสำเร็จ');
-      this.router.navigate(['/signin']);
+      this.router.navigate(['/login']);
     } catch (error) {
       console.log(error);
-      alert('มีผู้ใช้นี้ในระบบแล้ว หรือ อีเมลถูกใช้ไปแล้ว');
+      alert('อีเมลถูกใช้ไปแล้ว');
     }
   }
 

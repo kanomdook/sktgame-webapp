@@ -12,7 +12,6 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ReportComponent } from './report/report.component';
-import { PeopleComponent } from './people/people.component';
 import { Api } from './providers/service/api';
 import { AuthGuardService } from './providers/auth-guard/auth-guard.service';
 import { RegisterSportComponent } from './register-sport/register-sport.component';
@@ -28,7 +27,6 @@ enableProdMode();
     RegisterComponent,
     NavbarComponent,
     ReportComponent,
-    PeopleComponent,
     RegisterSportComponent
   ],
   imports: [
